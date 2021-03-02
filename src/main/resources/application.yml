@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: bms-data
+  security: #spring security页面登录用户名及密码
+    user:
+      name: admin
+      password: admin
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml #指定mapper.xml路径
+  global-config:
+    db-config:
+      id-type: assign_uuid #全局默认主键类型为无中线uuid
+  configuration:
+    auto-mapping-behavior: partial #只对非嵌套的 resultMap 进行自动映射
+    map-underscore-to-camel-case: true #开启驼峰规则
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#JWT权限相关配置
+jwt:
+  tokenHeader: token #JWT存储的请求头
+  tokenHead: WTE #JWT负载中开头
+
+
